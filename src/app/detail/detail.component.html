@@ -1,0 +1,12 @@
+<div class="container-fluid wrapper">
+  <div class="row header">
+    <div class="col-12 col-md-4">
+      <img class="img-fluid" [src]="character.thumbnail?.path + '.' + character.thumbnail?.extension" [alt]="character.name">
+    </div>
+    <div class="col-12 col-md-8">
+      <h1>{{character.name}}</h1>
+
+      <span class="text-muted text-break text-wrap">{{character.description}}</span>
+    </div>
+  </div>
+</div>

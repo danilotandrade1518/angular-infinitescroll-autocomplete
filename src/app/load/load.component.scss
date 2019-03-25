@@ -1,0 +1,29 @@
+@import '../../variables';
+
+.load-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+
+  .load {
+    width: 32px;
+    height: 32px;
+    clear: both;
+  }
+
+  .load-animation {
+    background-color: $primary;
+    border-radius: 50%;
+    -webkit-animation: loadAnimation .9s infinite linear;
+    animation: loadAnimation .9s infinite linear;
+  }
+
+  @-webkit-keyframes loadAnimation {
+    from { -webkit-transform: scale(0); }
+    to { -webkit-transform: scale(1); }
+  }
+  @keyframes loadAnimation {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+  }
+}

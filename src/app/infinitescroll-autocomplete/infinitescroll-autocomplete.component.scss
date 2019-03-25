@@ -1,0 +1,58 @@
+@import '../../variables';
+
+.wrapper{
+  margin: 10px;
+
+  .input {
+    display: block;
+    width: 80%;
+    height: 25px;
+    padding: 3px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+
+    &:hover, &:focus {
+      outline: $primary auto 5px;
+    }
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .result-wrapper{
+    z-index: 1000;
+    position: absolute;
+    width: 90%;
+    z-index: 1000;
+
+    .result {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      width: 90%;
+      max-height: 362px;
+      background-color: lighten($primary, 35%);
+      overflow-y: scroll;
+      margin-top: 0;
+      padding-left: 0;
+
+      .item {
+        cursor: pointer;
+        padding: 10px 20px;
+        list-style: none;
+
+        &:hover, &.active {
+          background-color: lighten($primary, 25%);
+        }
+      }
+    }
+  }
+
+  .total{
+    margin-top: 10px;
+  }
+}

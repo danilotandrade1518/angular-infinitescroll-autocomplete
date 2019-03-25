@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <input
+    class="input"
+    type="text"
+    placeholder="Digite a sua busca"
+    [(value)]="inputValue"
+    (keyup)="handleSearchChange($event)"
+    (focus)="onInputFocus()"
+    (blur)="itemSelected(undefined)">
+
+  <div class="result-wrapper">
+    <ul class="result" [class.hide]="items.length === 0 || !focused" (scroll)="onScroll($event)">
+      <li class="item" [class.active]="value === item" *ngFor="let item of items" (mousedown)="itemSelected(item)">
+        <span>{{ item[itemKey] }}</span>
+      </li>
+    </ul>
+
+    <app-load [class.hide]="!loading"></app-load>
+  </div>
+
+  <small class="total">Total de {{ totalItems ? totalItems : 0 }} resultados econtrados.</small>
+</div>
