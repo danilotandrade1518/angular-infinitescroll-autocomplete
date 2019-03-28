@@ -16,13 +16,13 @@ export class InfinitescrollAutocompleteComponent implements OnInit, OnDestroy {
   @Input() minInputLength = 2;
   @Input() timeToEvent = 800;
   @Input() loading = false;
+  focused = false;
+  inputValue = '';
 
   @Output() valueChange = new EventEmitter<string>();
   @Output() searchChange = new EventEmitter<string>();
   @Output() scrollAtBottom = new EventEmitter();
 
-  focused = false;
-  inputValue = '';
   private searchStringSubscription: Subscription;
   private searchString: Subject<KeyboardEvent> = new Subject<KeyboardEvent>();
 
